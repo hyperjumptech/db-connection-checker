@@ -2,6 +2,8 @@ import { createConnection } from 'mariadb';
 
 import { CheckConnectionOptions } from './interface';
 
+const CONNECT_TIMEOUT_S = 3_000;
+
 export async function checkMariaDBConnection(options?: CheckConnectionOptions) {
   const client = await createConnection({
     host: options?.host,
@@ -9,6 +11,8 @@ export async function checkMariaDBConnection(options?: CheckConnectionOptions) {
     user: options?.user,
     password: options?.password,
     database: options?.database,
+
+    connectTimeout: CONNECT_TIMEOUT_S,
   });
 
   await client.end();
