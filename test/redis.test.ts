@@ -8,6 +8,7 @@ import {
   MockInstance,
   vi,
 } from 'vitest';
+import { CONNECT_TIMEOUT_S } from '../src/constant';
 
 import { checkRedisConnection } from '../src/redis';
 
@@ -61,6 +62,7 @@ describe('redis.ts', () => {
       socket: {
         host: undefined,
         port: undefined,
+        connectTimeout: CONNECT_TIMEOUT_S,
       },
     });
   });
@@ -76,6 +78,7 @@ describe('redis.ts', () => {
       port: 12345,
       user: 'user',
       password: 'password',
+      timeout: 5_000,
     });
 
     expect(result).to.eql(true);
@@ -85,6 +88,7 @@ describe('redis.ts', () => {
       socket: {
         host: 'customhost',
         port: 12345,
+        connectTimeout: 5_000,
       },
     });
   });

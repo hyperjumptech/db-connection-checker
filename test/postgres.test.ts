@@ -1,4 +1,5 @@
 import * as postgres from 'pg';
+import { CONNECT_TIMEOUT_S } from '../src/constant';
 import {
   afterAll,
   beforeAll,
@@ -25,7 +26,7 @@ afterAll(() => {
   vi.resetAllMocks();
 });
 
-describe('postgres.ts', () => {
+describe.only('postgres.ts', () => {
   it('handles connection success', async () => {
     const client = new postgres.Client();
 
@@ -67,6 +68,7 @@ describe('postgres.ts', () => {
       port: undefined,
       user: undefined,
       password: undefined,
+      connectionTimeoutMillis: CONNECT_TIMEOUT_S,
     });
   });
 
@@ -82,6 +84,7 @@ describe('postgres.ts', () => {
       port: 12345,
       user: 'user',
       password: 'password',
+      timeout: 5_000,
     });
 
     expect(result).to.eql(true);
@@ -90,6 +93,7 @@ describe('postgres.ts', () => {
       port: 12345,
       user: 'user',
       password: 'password',
+      connectionTimeoutMillis: 5_000,
     });
   });
 });
