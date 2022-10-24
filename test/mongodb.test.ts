@@ -8,6 +8,7 @@ import {
   MockInstance,
   vi,
 } from 'vitest';
+import { DEFAULT_TIMEOUT_MS } from '../src/constant';
 
 import { checkMongoDBConnection } from '../src/mongodb';
 

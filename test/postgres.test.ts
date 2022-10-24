@@ -1,4 +1,5 @@
 import * as postgres from 'pg';
+import { DEFAULT_TIMEOUT_MS } from '../src/constant';
 import {
   afterAll,
   beforeAll,
@@ -67,6 +68,7 @@ describe('postgres.ts', () => {
       port: undefined,
       user: undefined,
       password: undefined,
+      connectionTimeoutMillis: DEFAULT_TIMEOUT_MS,
     });
   });
 
@@ -82,6 +84,7 @@ describe('postgres.ts', () => {
       port: 12345,
       user: 'user',
       password: 'password',
+      timeout: 5_000,
     });
 
     expect(result).to.eql(true);
@@ -90,6 +93,7 @@ describe('postgres.ts', () => {
       port: 12345,
       user: 'user',
       password: 'password',
+      connectionTimeoutMillis: 5_000,
     });
   });
 });
