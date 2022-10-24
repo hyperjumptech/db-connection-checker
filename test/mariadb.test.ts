@@ -1,5 +1,5 @@
 import * as mariadb from 'mariadb';
-import { CONNECT_TIMEOUT_S } from '../src/constant';
+import { DEFAULT_TIMEOUT_MS } from '../src/constant';
 import {
   afterAll,
   beforeAll,
@@ -59,7 +59,7 @@ describe('mariadb.ts', () => {
       username: undefined,
       password: undefined,
       database: undefined,
-      connectTimeout: CONNECT_TIMEOUT_S,
+      connectTimeout: DEFAULT_TIMEOUT_MS,
     });
   });
 

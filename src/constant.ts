@@ -1,1 +1,1 @@
-export const CONNECT_TIMEOUT_S = 10_000;
+export const DEFAULT_TIMEOUT_MS = 10_000;

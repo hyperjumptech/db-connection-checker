@@ -1,5 +1,5 @@
 import * as postgres from 'pg';
-import { CONNECT_TIMEOUT_S } from '../src/constant';
+import { DEFAULT_TIMEOUT_MS } from '../src/constant';
 import {
   afterAll,
   beforeAll,
@@ -68,7 +68,7 @@ describe('postgres.ts', () => {
       port: undefined,
       user: undefined,
       password: undefined,
-      connectionTimeoutMillis: CONNECT_TIMEOUT_S,
+      connectionTimeoutMillis: DEFAULT_TIMEOUT_MS,
     });
   });
 

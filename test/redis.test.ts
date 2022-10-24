@@ -8,7 +8,7 @@ import {
   MockInstance,
   vi,
 } from 'vitest';
-import { CONNECT_TIMEOUT_S } from '../src/constant';
+import { DEFAULT_TIMEOUT_MS } from '../src/constant';
 
 import { checkRedisConnection } from '../src/redis';
 
@@ -62,7 +62,7 @@ describe('redis.ts', () => {
       socket: {
         host: undefined,
         port: undefined,
-        connectTimeout: CONNECT_TIMEOUT_S,
+        connectTimeout: DEFAULT_TIMEOUT_MS,
       },
     });
   });
