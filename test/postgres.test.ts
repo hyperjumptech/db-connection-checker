@@ -26,7 +26,7 @@ afterAll(() => {
   vi.resetAllMocks();
 });
 
-describe.only('postgres.ts', () => {
+describe('postgres.ts', () => {
   it('handles connection success', async () => {
     const client = new postgres.Client();
 
