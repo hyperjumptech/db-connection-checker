@@ -1,8 +1,7 @@
 import { Client } from 'pg';
 
 import { CheckConnectionOptions } from './interface';
-
-const CONNECT_TIMEOUT_S = 3_000;
+import { CONNECT_TIMEOUT_S } from './constant';
 
 export async function checkPostgresConnection(
   options?: CheckConnectionOptions
@@ -14,7 +13,7 @@ export async function checkPostgresConnection(
     password: options?.password,
     database: options?.database,
 
-    connectionTimeoutMillis: CONNECT_TIMEOUT_S,
+    connectionTimeoutMillis: options?.timeout || CONNECT_TIMEOUT_S,
   });
 
   await client.connect();

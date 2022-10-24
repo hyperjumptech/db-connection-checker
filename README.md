@@ -17,7 +17,7 @@ npm i @hyperjumptech/db-connection-checker
 
 ## API
 
-**CheckConnectionOptions**
+### CheckConnectionOptions
 
 ```ts
 type CheckConnectionOptions = {
