@@ -1,7 +1,7 @@
 {
   "name": "@hyperjumptech/db-connection-checker",
   "description": "A Node.js library for checking database connection",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "typings": "dist/index.d.ts",
