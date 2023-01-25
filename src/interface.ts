@@ -5,4 +5,6 @@ export type CheckConnectionOptions = {
   password?: string;
   database?: string;
   timeout?: number;
+
+  others?: any[string];
 };
